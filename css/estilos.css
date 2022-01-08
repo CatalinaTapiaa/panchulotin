@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    height: 100px;
+    z-index: 1030;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%), 0 6px 20px 0 rgb(0 0 0 / 50%);
+}
+
+body{
+    background-color: black;
+}
+
+.navBar {
+    margin: 0 100px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    margin: 0 100px;
+    position: relative;
+}
+
+.navItem {
+    display: inline-block;
+    margin: 20px;
+}
+
+.navItem a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    position: relative;
+}
+
+.navItem a:hover, .logo:hover {
+    color: #6d6d6d;
+}
+/*Animaciones NAV - Subrayado*/
+.navItem a::after, .logo::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #6d6d6d;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+.navItem a:hover::after, .logo:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+
+.video {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.videoPrincipal::before {
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 102vh;
+}
+
+.overlay {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay p {
+    text-transform: uppercase;
+}
+
+.nombre {
+    font-size: 48px;
+    color: rgb(221, 221, 221);
+    font-weight: 700;
+}
+
+.profesion {
+    color: #ffffff4f;
+    font-size: 38px;
+    font-weight: 700;
+    animation: flash 5s infinite;
+}
+
+@keyframes flash {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+.gallery{
+    display: grid; 
+    grid-template-columns: 0.6fr 1.4fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "titulo galeriaFotos"; 
+    background-color: black;
+    width: 100%;
+    height: 100%;
+
+  }
+
+.titulo h1{
+    color: white;
+    font-size: 58px;
+    margin: 400px 50px 0 100px;
+    text-align: end;
+}
+
+.titulo{
+    grid-area: titulo; 
+    background-image: url(../img/bg-1.jpg);
+    background-size: cover;
+    background-color: #000000e3;
+    background-blend-mode: overlay;
+}
+
+.galeriaFotos { 
+    grid-area: galeriaFotos; 
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: unset;
+    display: grid;
+    gap: 0.6rem;
+    grid-column: 2;
+    grid-row: 1;
+    height: 100vh;
+}
+
+.imagenGaleria{
+    display: block;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%), 0 6px 20px 0 rgb(0 0 0 / 50%);
+    position: relative;
+    background-color: #000000;
+}
+
+.imagenGaleria img{
+    height: 100%;
+    object-fit: cover;
+    transform: translateY(0) scale(1.5);
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.galeriaFotos div:nth-child(1) {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+}
+
+.galeriaFotos  div:nth-child(4) {
+    grid-row-end: span 2;
+}
+
+.galeriaFotos div:nth-child(5) {
+    grid-row-end: span 2;
+}
+
+.galeriaFotos div:nth-child(10) {
+    grid-column-end: unset;
+}
+
+.galeriaFotos div:nth-child(7) {
+    grid-column-end: unset;
+}
+
+.imagenGaleria:hover img {
+    -webkit-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1);
+}
+
+.phrases{
+    background-color: white;
+    min-height: calc(100vh - 125px);
+    background-image: url(../img/tatto-2.jpg);
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.514);
+    background-blend-mode: overlay;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.containerPhrases{
+    width: 500px;
+    height: 400px;
+    background-color: #90909054;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%), 0 6px 20px 0 rgb(0 0 0 / 50%);
+}
+
+.containerPhrases p{
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    font-style: italic;
+    margin-top: 150px;
+}
+
+footer{
+    height: 50px;
+    background-image: url(../img/bg-1.jpg);
+    background-size: cover;
+    background-color: #000000e3;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    margin-top: -40px;
+}
+
+footer p{
+    color: #ffffff3d;
+    margin: 0 100px;
+    padding-top: 20px;
+    font-style: italic;
+    text-align: end;
+}
+
+.tituloP {
+    font-size: 58px;
+    color: white;
+    font-weight: 700;
+    position: absolute;
+    margin: 100px;
+}
+
